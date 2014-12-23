@@ -393,6 +393,8 @@ class OnApp_VirtualMachine extends OnApp {
 
             case 3.0:
             case 3.1:
+		$this->fields = $this->initFields( 2.3 );
+		break;
             case 3.2:
             case 3.3:
             case 3.4:
@@ -413,6 +415,11 @@ class OnApp_VirtualMachine extends OnApp {
                     ONAPP_FIELD_MAP  => 'licensing_server_id',
                     ONAPP_FIELD_TYPE => 'integer',
                 );
+		$this->fields['recipe_ids'] = array (
+			ONAPP_FIELD_MAP => '_recipe_ids',
+			ONAPP_FIELD_TYPE => 'array',
+			ONAPP_FIELD_READ_ONLY => false,
+		);
                 break;
         }
 
